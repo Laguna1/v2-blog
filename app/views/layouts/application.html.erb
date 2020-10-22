@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>V2Blog</title>
+    <title>V2 Blog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+   
   </head>
 
   <body>
+  <%= render 'layouts/navigation' %>
   <% flash.each do |name, msg| %>
     <ul>
      <li><%= msg %></li>
     </ul>
 <% end %>
+  
     <%= yield %>
+    <%= render 'layouts/footer' %>
   </body>
 </html>
